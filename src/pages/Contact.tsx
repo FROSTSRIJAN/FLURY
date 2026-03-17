@@ -6,11 +6,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle, Instagram } from "lucide-react";
 
 const CONTACT_INFO = [
   { icon: Mail, label: "Email", value: "hello@furly.in" },
-  { icon: Phone, label: "Phone", value: "+91 98765 43210" },
+  { icon: Instagram, label: "Instagram", value: "@__furly__", href: "https://www.instagram.com/__furly__?igsh=MXJteDZvdGViMWFwNw%3D%3D&utm_source=qr" },
+  { icon: Phone, label: "Phone", value: "9650673927" },
   { icon: MapPin, label: "Location", value: "Bangalore, India" },
 ];
 
@@ -62,7 +63,13 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="text-xs text-muted-foreground font-medium">{item.label}</p>
-                      <p className="font-semibold text-foreground">{item.value}</p>
+                      {"href" in item ? (
+                        <a href={item.href} target="_blank" rel="noreferrer" className="font-semibold text-foreground hover:underline">
+                          {item.value}
+                        </a>
+                      ) : (
+                        <p className="font-semibold text-foreground">{item.value}</p>
+                      )}
                     </div>
                   </div>
                 ))}

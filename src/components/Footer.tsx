@@ -19,7 +19,7 @@ const Footer = () => {
             </p>
             <div className="flex gap-3">
               {[Instagram, Twitter, Facebook, Youtube].map((Icon, i) => (
-                <a key={i} href="#" className="p-2 rounded-full bg-primary-foreground/10 hover:bg-primary/20 transition-colors">
+                <a key={i} href={i === 0 ? "https://www.instagram.com/__furly__?igsh=MXJteDZvdGViMWFwNw%3D%3D&utm_source=qr" : "#"} target={i === 0 ? "_blank" : undefined} rel={i === 0 ? "noreferrer" : undefined} className="p-2 rounded-full bg-primary-foreground/10 hover:bg-primary/20 transition-colors">
                   <Icon className="h-4 w-4" />
                 </a>
               ))}
@@ -30,7 +30,7 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-heading font-semibold text-lg">Services</h4>
             <div className="space-y-2 text-sm opacity-70">
-              {["Pet Sitting", "Mobile Grooming", "Pet Walking", "Pet Training", "Vet Consultation"].map((s) => (
+              {["Temporary Pet Care", "Mobile Grooming", "Furly Pro Membership", "Community Groups", "Team Furly"].map((s) => (
                 <a key={s} href="/services" className="block hover:opacity-100 transition-opacity">{s}</a>
               ))}
             </div>
@@ -56,7 +56,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 shrink-0" />
-                <span>+91 98765 43210</span>
+                <span>9650673927</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="h-4 w-4 shrink-0" />
